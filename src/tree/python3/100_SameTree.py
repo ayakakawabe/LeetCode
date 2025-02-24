@@ -18,11 +18,10 @@ class Solution:
                 if root1 and root2:
                     if root1.val != root2.val:
                         is_same=False
-                        print(False)
                     else:
                         is_same=preorder_compare(root1.left,root2.left,is_same)
                         is_same=preorder_compare(root1.right,root2.right,is_same)
-                elif (root1==None) and (root2==None):
+                elif not root1 and not root2:
                     pass
                 else:
                     is_same=False
