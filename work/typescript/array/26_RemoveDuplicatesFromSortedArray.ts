@@ -6,23 +6,25 @@
 
 // @lc code=start
 function removeDuplicates(nums: number[]): number {
-    if(nums.length==1){
-        return 1;
-    }
-    else{
-        let i:number=1;
-        let numDoubtUniq:number=nums[0];
-        while(i<nums.length){
-            if(numDoubtUniq==nums[i]){
-                nums.splice(i,1);
+    let dump:number=0;
+    let i:number=0;
+    while(true){
+        let j:number=i+1+dump;
+        while(j<nums.length){
+            if(nums[i]==nums[j]){
+                j++;
             }
             else{
-                numDoubtUniq=nums[i];
-                i++;
+                [nums[i+1],nums[j]]=[nums[j],nums[i+1]];
+                dump=j-i-1;
+                break;
             };
+        }
+        if(j>=nums.length){
+            return i+1;
         };
-        return nums.length;
-    };
+        i++;
+    }
 };
 // @lc code=end
 
