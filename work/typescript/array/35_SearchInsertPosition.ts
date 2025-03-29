@@ -29,14 +29,14 @@ function searchInsert(nums: number[], target: number): number {
         }
         else{
             return i;
-        }
+        };
     };
     if(i==-1){
         return 0;
     }
     else{
         return i;
-    }
+    };
 };
 // @lc code=end
 
