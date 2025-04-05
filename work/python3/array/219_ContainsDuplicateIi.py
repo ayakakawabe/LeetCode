@@ -12,14 +12,12 @@ class Solution:
         else:
             if k<len(nums):
                 for i in range(0,len(nums)-1,1):
-                    for j in range(i+1,min(i+k+1,len(nums)),1):
-                        if(nums[i]==nums[j]):
-                            return True
+                    if nums[i] in nums[i+1:min(i+k+1,len(nums))]:
+                        return True
             else:
                 for i in range(0,len(nums)-1,1):
-                    for j in range(i+1,len(nums),1):
-                        if(nums[i]==nums[j]):
-                            return True
+                    if nums[i] in nums[i+1:]:
+                        return True
             return False
 # @lc code=end
 
